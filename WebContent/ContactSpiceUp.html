@@ -1,0 +1,469 @@
+<html>
+
+<head>
+  <!--bootstrap libraries for implementation of bootstrap and css-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<!-- Start Of CSS-->
+  <style>
+    /* start of navbar css */
+    body {
+      font-family: ariel;
+     }
+    #colour {
+      color: #5f5950;
+    }
+
+     /*img {
+      overflow: hidden;
+      position: absolute;
+    } */
+
+    .navbar {
+  overflow: hidden; 
+  background-color: #333;
+  position: fixed;
+  /* Set the navbar to fixed position */
+  top: 0;
+  position: fixed;
+  right: 0;
+  z-index: 1030;
+   /* Position the navbar at the top of the page */
+  width: 100%;
+  /* Full width */
+  left: 0;
+  /* overflow: visible; */
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+    }
+
+    .navbar ul li {
+      list-style-type: none;
+      width: 120px;
+      /* padding: 5px; */
+      float: left;
+      text-align: center;
+      /* margin-right: 50px; */
+      padding-top: 8px;
+    }
+.navbar ul{
+  display: inline;
+  text-align: center;
+  margin-right: 150px;
+}
+    #s1 {
+      color: #5f5950;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: darkgray;
+    }
+/*hover effect*/
+    .navbar ul li:hover {
+      
+      background-color: #ff9b08;
+    }
+/*hover effect change of text color*/
+    .navbar ul li a:hover {
+      color: white;
+    }
+
+/*end of navbar css*/
+#page1{
+      height:70px;
+      }
+#page5{
+      height: 650px;
+      background-color:#fffaf3;
+      }
+
+
+/* // inputs and their css //*/
+
+input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
+    font-size: 0.75em;
+    color: #999;
+    top: -5px;
+    -webkit-transition: all 0.225s ease;
+    transition: all 0.225s ease;
+}
+
+.styled-input {
+    float: left;
+    width: 293px;
+    margin: 1rem 0;
+    position: relative;
+    border-radius: 4px;
+}
+
+@media only screen and (max-width: 768px){
+    .styled-input {
+        width:100%;
+    }
+}
+
+.styled-input label {
+    color: #999;
+    padding: 1.3rem 30px 1rem 30px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    pointer-events: none;
+}
+
+.styled-input.wide { 
+    width: 650px;
+    max-width: 100%;
+}
+
+input,
+textarea {
+    padding: 30px;
+    border: 2px ridge #ffb03b;
+    width: 100%;
+    font-size: 1rem;
+    background-color:white;
+    color: crimson;
+    border-radius: 4px;
+}
+
+input:focus,
+textarea:focus { outline: 0; }
+
+input:focus ~ span,
+textarea:focus ~ span {
+    width: 100%;
+    -webkit-transition: all 0.075s ease;
+    transition: all 0.075s ease;
+}
+
+textarea {
+    width: 100%;
+    min-height: 15em;
+}
+
+.input-container {
+    width: 650px;
+    max-width: 100%;
+    margin: 20px auto 25px auto;
+}
+/* css for contact us and book a table button*/
+ .submit-btn {
+    padding: 7px 35px;
+    border-radius: 60px;
+    display: inline-block;
+    background-color: #ff9b08;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.07), 
+              0 2px 10px 0 rgba(0,0,0,0.067); 
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+    margin-left:200px ;
+} 
+
+ .submit-btn:hover {
+    transform: translateY(1px);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10),
+              0 1px 1px 0 rgba(0,0,0,0.09);
+} 
+
+@media (max-width: 768px) {
+    .submit-btn {
+        width:100%;
+        float: none;
+        text-align:center;
+    }
+}
+
+input[type=checkbox] + label {
+  color: #ccc;
+  font-style: italic;
+} 
+
+input[type=checkbox]:checked + label {
+  color: #f00;
+  font-style: normal;
+}
+
+
+
+
+
+    /* CSS for Popup*/
+/* .login-trigger {
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(to bottom right, #B05574, #F87E7B);
+  padding: 15px 30px;
+  border-radius: 30px;
+  position: relative; 
+  top: 50%;
+} */
+
+/*Pop-Up*/
+/* a#login_pop:hover, a#join_pop:hover {
+    border-color: orange;
+}
+ .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    bottom: 0;
+    cursor: default;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    visibility: hidden;
+    z-index: 1;
+
+    -webkit-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+    -ms-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    transition: opacity .5s;
+} 
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+.popup {
+    background-color: #ff9b08;
+    border: 3px solid #fff;
+    display: inline-block;
+    left: 50%;
+    opacity: 0;
+    padding: 15px;
+    position: fixed;
+    text-align: justify;
+    top: 40%;
+    visibility: hidden;
+    z-index: 10;
+
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+
+    -webkit-box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+    -moz-box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+    -ms-box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+    -o-box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+    box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+
+    -webkit-transition: opacity .5s, top .5s;
+    -moz-transition: opacity .5s, top .5s;
+    -ms-transition: opacity .5s, top .5s;
+    -o-transition: opacity .5s, top .5s;
+    transition: opacity .5s, top .5s;
+}
+.overlay:target+.popup {
+    top: 50%;
+    opacity: 1;
+    visibility: visible;
+}
+.close {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-decoration: none;
+    top: -15px;
+    width: 40px;
+
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+}
+.close:before {
+    color: rgba(255, 255, 255, 0.9);
+    content: "X";
+    font-size: 24px;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+}
+.close:hover {
+    background-color: rgba(64, 128, 128, 0.8);
+}
+.popup p, .popup div {
+    margin-bottom: 10px;
+}
+.popup label {
+    display: inline-block;
+    text-align: left;
+    width: 130px;
+}
+.popup input[type="text"], .popup input[type="password"] {
+    border: 1px solid;
+    border-color: #999 #ccc #ccc;
+    margin: 0;
+    padding: 2px;
+
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+}
+.popup input[type="text"]:hover, .popup input[type="password"]:hover {
+    border-color: #555 #888 #888;
+} */
+
+</style>
+</head>
+<body>
+
+<!--page1 home page-->
+<section id="page1">
+    <!--navbar logo and menu code-->
+    <div class="navbar">
+      <a href="#page1" alt=""><img src="nav-logo.png" style="margin-top:-10px; height: 80px;width:90px; margin-left:6px;margin-top:-2px;border-radius:6em;"></a>
+      <ul type="none">
+            <li><a href="modifiedhomepagespiceup.html">HOME</a></li>
+        <li><a href="modifiedhomepagespiceup.html">ABOUT US</a></li>
+        <li><a href="modifiedhomepagespiceup.html">MENU</a></li>
+        <li><a href="BookTheTable.html">BOOK A TABLE</a></li>
+        <li><a href="ContactSpiceUp.html">CONTACT US</a></li>
+        <!-- <li><a href="#login_form" id="login_pop">ADMIN LOGIN</a></li>       -->
+      </ul>
+    </div>
+    <!--end of navbar logo and menu code-->    
+  </section>
+  <!--end of page1 home page-->
+<!-- contact us page 5-->
+<section id="page5">
+    <div class="col-xs-12">
+    <h3 style="margin-left:460px; margin-top:30px;font-weight: 800;">
+      <font color="sky blue" face="Viner Hand ITC">Submit Your Query
+        <span style="color:#5f5950;">Here</span></font>
+    </h3>
+</div>
+
+
+ 	<script>
+    	function saveEnquiry()
+    	{
+    		  name=document.getElementById('name').value;
+    		  email=document.getElementById('email').value;
+    		  phno=document.getElementById("phoneNo").value;
+    		  msg=document.getElementById("message").value;
+ 			  if(name=="" && email=="" && phno=="" && msg=="")
+ 			  {
+ 			  		alert("Plzzz Enter All Details");  
+ 			  }
+ 			  else
+ 			  {
+ 				  ob=new XMLHttpRequest();
+
+ 				  if(window.XMLHttpRequest)
+ 				  {  
+ 					  ob=new XMLHttpRequest();  
+ 				  }  
+ 				  else if(window.ActiveXObject)
+ 				  {  
+ 					  ob=new ActiveXObject("Microsoft.XMLHTTP");   
+ 				  } 
+ 				  ob.onreadystatechange=function()
+ 				  {
+ 				              if(ob.readyState==4 && ob.status==200)
+ 				              {
+ 				                         // document.getElementById('output').innerHTML=ob.responseText;
+ 				                         alert(ob.responseText);
+ 				              }
+ 				  }
+ 				  ob.open("GET","ContactUsBack.jsp?name="+name+"&email="+email+"&phno="+phno+"&msg="+msg);
+ 				  ob.send();  
+ 			  }
+    	}
+    </script>
+    <!--table for contact us input fields-->
+    <div class="container">
+      <div class="row input-container"> 
+          <div class="col-xs-12">
+            <div class="styled-input wide">
+              <input type="text" id="name" required />
+              <label>Name</label> 
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="styled-input">
+              <input type="text" id="email" required />
+              <label>Email</label> 
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="styled-input" style="float:right;">
+              <input type="text" id="phoneNo" required />
+              <label>Phone Number</label> 
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="styled-input wide">
+              <textarea id="message" required></textarea>
+              <label>Message</label>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <button class="btn-lrg submit-btn" onclick="saveEnquiry()">Send Message</button>
+          </div>
+      </div>
+    </div>
+    <!-- <div class="btn-lrg submit-btn" id="output"></div> -->
+   
+<!--end of contact us section-->
+
+    <!-- popup form #1 -->
+<!-- <a href="#x" class="overlay" id="login_form"></a>
+<div class="popup">
+  <h2>Login</h2>
+<div>
+   <label for="login">Email/Username</label>
+   <input type="text" id="login" value="" />
+</div>
+<div>
+ <label for="password">Password</label>
+ <input type="password" id="password" value="" />
+</div>
+<button type="button">Login</button>
+<a href="#login_form1" id="login_pop">Register</a>
+<a class="close" href="#close"></a>
+</div>
+
+<a href="#x" class="overlay" id="login_form1"></a>
+<div class="popup">
+  <h2>Register</h2>
+  <div>
+   <label for="register">Name:</label>
+   <input type="text" id="register" value="" />
+   </div>
+<div>
+<label for="login">Email/Username</label>
+<input type="text" id="register" value="" />
+</div>
+<div>
+<label for="password">Password</label>
+<input type="password" id="rpassword" value="" />
+</div>
+<button type="button">Register</button>
+<a class="register" href="#login_form">Login</a>
+<a class="close" href="#close"></a>
+</div> -->
+<!--end of popup forms-->
+    </section>
+    </body>
+    </html>

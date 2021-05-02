@@ -1,0 +1,1128 @@
+<html>
+<title>SpiceUp</title>
+<head>
+  <!--bootstrap libraries for implementation of bootstrap and css-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+
+<!--canvas libraries-->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.rawgit.com/leongersen/noUiSlider/master/distribute/nouislider.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/leongersen/noUiSlider/master/distribute/nouislider.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.11/fabric.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdn.rawgit.com/leongersen/noUiSlider/master/distribute/nouislider.min.js"></script>
+<!--end of canvas libraries-->
+
+    <!-- Start Of CSS-->
+  <style>
+    /* start of navbar css */
+    body {
+      font-family: ariel;
+      /* background:wheat; */
+    }
+
+    #colour {
+      color: #5f5950;
+    }
+
+     /*img {
+      overflow: hidden;
+      position: absolute;
+    } */
+
+    .navbar {
+  overflow: hidden; 
+  background-color: #333;
+  position: fixed;
+  /* Set the navbar to fixed position */
+  top: 0;
+  position: fixed;
+  right: 0;
+  z-index: 1030;
+   /* Position the navbar at the top of the page */
+  width: 100%;
+  /* Full width */
+  left: 0;
+  /* overflow: visible; */
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+    }
+
+    .navbar ul li {
+      list-style-type: none;
+      width: 120px;
+      /* padding: 5px; */
+      float: left;
+      text-align: center;
+      /* margin-right: 50px; */
+      padding-top: 8px;
+    }
+.navbar ul{
+  display: inline;
+  text-align: center;
+  margin-right: 150px;
+}
+    #s1 {
+      color: #5f5950;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: darkgray;
+    }
+/*hover effect*/
+    .navbar ul li:hover {
+      
+      background-color: #ff9b08;
+    }
+/*hover effect change of text color*/
+    .navbar ul li a:hover {
+      color: white;
+    }
+
+/*end of navbar css*/
+#page1{
+      height:70px;
+    }
+    #page4 {
+      height:2000px;
+      background-color: #fffaf3;
+    }
+/* // inputs and their css //*/
+
+input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
+    font-size: 0.75em;
+    color: #999;
+    top: -5px;
+    -webkit-transition: all 0.225s ease;
+    transition: all 0.225s ease;
+}
+
+.styled-input {
+    float: left;
+    width: 293px;
+    margin: 1rem 0;
+    position: relative;
+    border-radius: 4px;
+}
+
+@media only screen and (max-width: 768px){
+    .styled-input {
+        width:100%;
+    }
+}
+
+.styled-input label {
+    color: #999;
+    padding: 1.3rem 30px 1rem 30px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    pointer-events: none;
+    font-size: 20px;
+}
+
+.styled-input.wide { 
+    width: 650px;
+    max-width: 100%;
+}
+
+input,
+textarea {
+    padding: 30px;
+    border: 2px ridge #ffb03b;
+    width: 100%;
+    font-size: 1rem;
+    background-color:white;
+    color: crimson;
+    border-radius: 4px;
+}
+
+input:focus,
+textarea:focus { outline: 0; }
+
+input:focus ~ span,
+textarea:focus ~ span {
+    width: 100%;
+    -webkit-transition: all 0.075s ease;
+    transition: all 0.075s ease;
+}
+
+textarea {
+    width: 100%;
+    min-height: 15em;
+}
+
+.input-container {
+    width: 650px;
+    max-width: 100%;
+    margin: 20px auto 25px auto;
+}
+/* css for contact us and book a table button*/
+ .submit-btn {
+    padding: 7px 35px;
+    border-radius: 60px;
+    display: inline-block;
+    background-color: #ff9b08;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.07), 
+              0 2px 10px 0 rgba(0,0,0,0.067); 
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+    margin-left:200px ;
+} 
+
+ .submit-btn:hover {
+    transform: translateY(1px);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10),
+              0 1px 1px 0 rgba(0,0,0,0.09);
+} 
+
+@media (max-width: 768px) {
+    .submit-btn {
+        width:100%;
+        float: none;
+        text-align:center;
+    }
+}
+
+input[type=checkbox] + label {
+  color: #ccc;
+  font-style: italic;
+} 
+
+input[type=checkbox]:checked + label {
+  color: #f00;
+  font-style: normal;
+}
+
+
+
+
+/*css for payment popup*/
+.login-trigger {
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(to bottom right, #B05574, #F87E7B);
+  padding: 15px 30px;
+  border-radius: 30px;
+  position: relative; 
+  top:200px;
+}
+
+/*Pop-Up*/
+a#payment_popup:hover, a#join_pop:hover {
+    border-color: orange;
+}
+ .overlay1 {
+    background-color: rgba(0, 0, 0, 0.6);
+    bottom: 0;
+    cursor: default;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    visibility: hidden;
+    z-index: 1;
+
+    -webkit-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+    -ms-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    transition: opacity .5s;
+} 
+.overlay1:target {
+    visibility: visible;
+    opacity: 1;
+}
+.popup1 {
+    background-color: #ff9b08;
+    border: 3px solid #fff;
+    display: inline-block;
+    left: 50%;
+    opacity: 0;
+    padding: 35px;
+    position: fixed;
+    text-align: justify;
+    top:60%;
+    visibility: hidden;
+    z-index: 10;
+    height: 450px;
+
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+
+    -webkit-box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+    -moz-box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+    -ms-box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+    -o-box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+    box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+
+    -webkit-transition: opacity .5s, top .5s;
+    -moz-transition: opacity .5s, top .5s;
+    -ms-transition: opacity .5s, top .5s;
+    -o-transition: opacity .5s, top .5s;
+    transition: opacity .5s, top .5s;
+}
+.overlay1:target+.popup1 {
+    /* top: 50%; */
+    opacity: 1;
+    visibility: visible;
+}
+.close {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-decoration: none;
+    top: -15px;
+    width: 40px;
+
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+}
+.close:before {
+    color: rgba(255, 255, 255, 0.9);
+    content: "X";
+    font-size: 24px;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+}
+.close:hover {
+    background-color: rgba(64, 128, 128, 0.8);
+}
+.popup1 p, .popup1 div {
+    margin-bottom: 10px;
+}
+.popup1 label {
+    display: inline-block;
+    text-align: left;
+    width: 170px;
+}
+.popup1 input[type="text"], .popup1 input[type="month"] {
+    border: 1px solid;
+    border-color: #999 #ccc #ccc;
+    margin: 0;
+    padding: 2px;
+
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+}
+.popup1 input[type="text"]:hover, .popup1 input[type="month"]:hover {
+    border-color: #555 #888 #888;
+}
+
+
+
+.popup1 input[type="tel"]{
+    border: 1px solid;
+    border-color: #999 #ccc #ccc;
+    margin: 0;
+    padding: 2px;
+
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+}
+.popup1 input[type="tel"]:hover {
+    border-color: #555 #888 #888;
+}
+/*end of css for payment popup*/
+
+/* Style buttons */
+.buttonbox {
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, -50%)
+ }
+
+ .spinner-button {
+     border: 2px solid #000;
+     /* display: inline-block; */
+     padding: 8px 20px 9px;
+     font-size: 18px;
+     color: #000;
+     background-color: transparent;
+     margin-top:400px;
+ }
+
+ .btn-primary:disabled {
+     color: #fff;
+     background-color: #000;
+     border-color: #000
+ }
+
+ .spinner-button:hover {
+     background-color: #000;
+     border: 2px solid #000;
+     color: #fff
+ }
+
+ .spinner-button i {
+     color: #fff
+ }
+
+ .spinner-button:hover i {
+     color: #fff
+ }
+
+ .fa {
+     color: #fff
+ }
+
+ .fa:hover {
+     color: #fff
+ }
+ 
+ .canvas-container {
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+</style>
+</head>
+<body>
+
+<!--page1 home page-->
+<section id="page1">
+    <!--navbar logo and menu code-->
+    <div class="navbar">
+      <a href="#page1" alt=""><img src="nav-logo.png" style="margin-top:-10px; height: 80px;width:90px; margin-left:6px;margin-top:-2px;border-radius:6em;"></a>
+      <ul type="none">
+            <li><a href="modifiedhomepagespiceup.html">HOME</a></li>
+        <li><a href="modifiedhomepagespiceup.html">ABOUT US</a></li>
+        <li><a href="modifiedhomepagespiceup.html">MENU</a></li>
+        <li><a href="BookTheTable.html">BOOK A TABLE</a></li>
+        <li><a href="ContactSpiceUp.html">CONTACT US</a></li>
+  
+      </ul>
+    </div>
+    <!--end of navbar logo and menu code-->    
+  </section>
+  <!--end of page1 home page-->
+
+
+
+<section id="page4">
+    <h3 style="margin-left:460px; margin-top:0px;
+     padding-top: 30px; padding-left: 5%; font-weight:800;">
+      <font color="sky blue" face="Viner Hand ITC">Book A Table 
+        <span style="color:#5f5950;">Here!</font>
+    </h3>
+    <h4 style="margin-left:470px; margin-top:0px; color: #ffb03b;">
+      <font face="new baskerville">Hotel Timings are 10A.M. to 11P.M.</font>
+    </h4>
+
+<!--book a table input fields-->
+    <div class="container">
+      <div class="row input-container"> 
+          <div class="col-xs-12">
+            <div class="styled-input wide">
+              <input type="text" required />
+              <label>Name</label> 
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="styled-input">
+              <input type="text" required />
+              <label>Email</label> 
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="styled-input" style="float:right;">
+              <input type="text" required />
+              <label>Phone Number</label> 
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="styled-input" style="float:right;">
+              <input type="text" required />
+              <label>No Of People</label> 
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="styled-input" style="float:right;">
+              <input type="Date" required />
+              <label></label> 
+            </div>
+          </div>
+          <div class="container-fluid text-center">
+            <h1><a href="http://fabricjs.com/" target="_blank">Hello</a> Please Select Your Table Here!</h1>
+            <!-- <p class="text-muted">There is no need to use jQuery or Bootstrap at all, it's used only to show modals and make buttons look better. I have also used <a href="https://refreshless.com/nouislider/" target="_blank">noUiSlider</a> for time selection.</p> -->
+            <div class="form-group admin-menu">
+              <div class="row">
+               <div class="col-sm-2 col-sm-offset-3 form-group">
+                   <label></label>
+                  <input type="number" id="width" class="form-control" value="302" hidden/>
+                </div>
+                <div class="col-sm-2 form-group">
+                  <label></label>
+                  <input type="number" id="height" class="form-control" value="812" hidden/> 
+                </div>
+                <div class="col-sm-2 form-group">
+                  <label>&nbsp;</label>
+                  <br />
+                  <button class="btn btn-primary" hidden>Save</button>
+                </div>
+              </div>
+              <div class="btn-group">
+                <button class="btn btn-primary rectangle" hidden>+ &#9647; Table</button>
+                <button class="btn btn-primary circle" hidden>+ &#9711; Table</button>
+                <button class="btn btn-primary triangle" hidden>+ &#9651; Table</button>
+                <button class="btn btn-primary chair" hidden>+ Chair</button>
+                 <button class="btn btn-primary bar" hidden>+ Bar</button> 
+                 <button class="btn btn-default wall" hidden>+ Wall</button> 
+                 <button class="btn btn-danger remove"hidden>Remove</button> 
+                <button class="btn btn-warning customer-mode">Customer mode</button>
+              </div>
+            </div>
+        
+            <div class="form-group customer-menu" style="display: none;">
+              <div class="btn-group">
+                <button class="btn btn-success submit">Submit reservation</button>
+                 <button class="btn btn-warning admin-mode" hidden>Admin Mode</button> 
+              </div>
+              <br />
+              <br />
+              <div id="slider"></div>
+              <div id="slider-value"></div>
+            </div>
+        
+            <canvas id="canvas" width="302" height="812"></canvas>
+          </div>
+        
+          <div class="modal fade" id="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-body text-center">
+                  <p id="modal-table-id"></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="styled-input wide">
+              <textarea required></textarea>
+              <label>Message</label>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <a href="#payment_form" id="payment_popup"><div class="btn-lrg submit-btn">Book A Table</div></a>
+          </div>
+          <!-- <button class="buttonload"><i class="fa fa-circle-o-notch fa-spin"></i>Loading</button> -->
+      </div>
+    </div>
+
+  </section> 
+  <!-- end of book a table page 4-->
+
+  
+
+<!--payment form-->
+<form name="paymentform">
+<a href="" class="overlay1" id="payment_form"></a>
+<div class="popup1">
+  <h2>Payment Details</h2>
+  <div class="card-images">
+    <img src="cardimg.png" height="55px" width="400px">
+    </div>
+<div>
+   <label for="Card Details">CARD NUMBER</label>
+   <input type="tel" inputmode="numeric" placeholder="XXXX XXXX XXXX XXXX" id="card number" maxlength="19" value="" />
+</div>
+<div>
+ <label for="expiration date">EXPIRY DATE</label>
+ <input type="month" id="card month" value="" />
+</div>
+<div>
+  <label for="card cvv">CVV</label>
+  <input type="text" id="card cvv" value="" maxlength="3" />
+ </div>
+ <div>
+  <label for="card owner">CARD HOLDER NAME</label>
+  <input type="text" id="card owner" value="" />
+ </div>
+
+ 
+  
+  <div class="buttonbox"> 
+    <button class="spinner-button btn btn-primary mb-2" id="btnFetch" onclick="setTimeout(paymentSuccess, 4000);">PAY &#x20B9;50</button>
+</div>
+<a class="close" href="#close"></a>
+</div>
+</form>
+<!--end of popup forms-->
+
+<script>
+$(document).ready(function() {
+$("#btnFetch").click(function() {
+// disable button
+$(this).prop("disabled", true);
+// add spinner to button
+$(this).html(
+'<i class="fa fa-circle-o-notch fa-spin"></i> Making Payment...'
+);
+});
+setTimeout( 
+            function  (){  
+                btnFetch.classList.remove('spinning');
+                btnFetch.innerHTML = "PAY &#x20B9;50";
+                
+                
+            }, 5000);
+            
+    }, false);
+function paymentSuccess()
+{
+  
+  alert("Payment Succesful")
+}
+
+
+// javascript for canvas
+let canvas
+let number
+const grid = 30
+const backgroundColor = '#696969'
+const lineStroke = '#ebebeb'
+const tableFill = 'rgba(150, 111, 51, 0.7)'
+const tableStroke = '#694d23'
+const tableShadow = 'rgba(0, 0, 0, 0.4) 3px 3px 7px'
+const chairFill = 'rgba(67, 42, 4, 0.7)'
+const chairStroke = '#32230b'
+const chairShadow = 'rgba(0, 0, 0, 0.4) 3px 3px 7px'
+const barFill = 'rgba(0, 93, 127, 0.7)'
+const barStroke = '#003e54'
+const barShadow = 'rgba(0, 0, 0, 0.4) 3px 3px 7px'
+const barText = 'Bar'
+const wallFill = 'rgba(136, 136, 136, 0.7)'
+const wallStroke = '#686868'
+const wallShadow = 'rgba(0, 0, 0, 0.4) 5px 5px 20px'
+
+        var  photoUrlLandscape = 'https://images8.alphacoders.com/292/292379.jpg',
+            photoUrlPortrait = 'https://presspack.rte.ie/wp-content/blogs.dir/2/files/2015/04/AMC_TWD_Maggie_Portraits_4817_V1.jpg'
+
+
+let widthEl = document.getElementById('width')
+let heightEl = document.getElementById('height')
+let canvasEl = document.getElementById('canvas')
+
+function initCanvas() {
+  if (canvas) {
+    canvas.clear()
+    canvas.dispose()
+  }
+
+  canvas = new fabric.Canvas('canvas')
+  number = 1
+  canvas.backgroundColor = backgroundColor
+  canvas.setBackgroundImage('https://presspack.rte.ie/wp-content/blogs.dir/2/files/2015/04/AMC_TWD_Maggie_Portraits_4817_V1.jpg', canvas.renderAll.bind(canvas));
+
+
+  for (let i = 0; i < (canvas.height / grid); i++) {
+    const lineX = new fabric.Line([ 0, i * grid, canvas.height, i * grid], {
+      stroke: lineStroke,
+      selectable: false,
+      type: 'line'
+    })
+    const lineY = new fabric.Line([ i * grid, 0, i * grid, canvas.height], {
+      stroke: lineStroke,
+      selectable: false,
+      type: 'line'
+    })
+    sendLinesToBack()
+    canvas.add(lineX)
+    canvas.add(lineY)
+  }
+
+  canvas.on('object:moving', function(e) {
+    snapToGrid(e.target)
+  })
+
+  canvas.on('object:scaling', function(e) {
+    if (e.target.scaleX > 5) {
+      e.target.scaleX = 5
+    }
+    if (e.target.scaleY > 5) {
+      e.target.scaleY = 5
+    }
+    if (!e.target.strokeWidthUnscaled && e.target.strokeWidth) {
+      e.target.strokeWidthUnscaled = e.target.strokeWidth
+    }
+    if (e.target.strokeWidthUnscaled) {
+      e.target.strokeWidth = e.target.strokeWidthUnscaled / e.target.scaleX
+      if (e.target.strokeWidth === e.target.strokeWidthUnscaled) {
+          e.target.strokeWidth = e.target.strokeWidthUnscaled / e.target.scaleY
+      }
+    }
+  })
+
+  canvas.on('object:modified', function(e) {
+    e.target.scaleX = e.target.scaleX >= 0.25 ? (Math.round(e.target.scaleX * 2) / 2) : 0.5
+    e.target.scaleY = e.target.scaleY >= 0.25 ? (Math.round(e.target.scaleY * 2) / 2) : 0.5
+    snapToGrid(e.target)
+    if (e.target.type === 'table') {
+      canvas.bringToFront(e.target)
+    }
+    else {
+      canvas.sendToBack(e.target)
+    }
+    sendLinesToBack()
+  })
+
+  canvas.observe('object:moving', function (e) {
+    checkBoudningBox(e)
+  })
+  canvas.observe('object:rotating', function (e) {
+    checkBoudningBox(e)
+  })
+  canvas.observe('object:scaling', function (e) {
+    checkBoudningBox(e)
+  })
+}
+initCanvas()
+
+function resizeCanvas() {
+  widthEl = document.getElementById('width')
+  heightEl = document.getElementById('height')
+  canvasEl.width = widthEl.value ? widthEl.value : 302
+  canvasEl.height = heightEl.value ? heightEl.value : 812
+  const canvasContainerEl = document.querySelectorAll('.canvas-container')[0]
+  canvasContainerEl.style.width = canvasEl.width
+  canvasContainerEl.style.height = canvasEl.height
+}
+resizeCanvas()
+
+widthEl.addEventListener('change', () => {
+  resizeCanvas()
+  initCanvas()
+  addDefaultObjects()
+})
+heightEl.addEventListener('change', () => {
+  resizeCanvas()
+  initCanvas()
+  addDefaultObjects()
+})
+
+function generateId() {
+  return Math.random().toString(36).substr(2, 8)
+}
+
+function addRect(left, top, width, height) {
+  const id = generateId()
+  const o = new fabric.Rect({
+    width: width,
+    height: height,
+    fill: tableFill,
+    stroke: tableStroke,
+    strokeWidth: 2,
+    shadow: tableShadow,
+    originX: 'center',
+    originY: 'center',
+    centeredRotation: true,
+    snapAngle: 45,
+    selectable: true
+  })
+  const t = new fabric.IText(number.toString(), {
+    fontFamily: 'Calibri',
+    fontSize: 14,
+    fill: '#fff',
+    textAlign: 'center',
+    originX: 'center',
+    originY: 'center'
+  })
+  const g = new fabric.Group([o, t], {
+    left: left,
+    top: top,
+    centeredRotation: true,
+    snapAngle: 45,
+    selectable: true,
+    type: 'table',
+    id: id,
+    number: number
+  })
+  canvas.add(g)
+  number++
+  return g
+}
+
+function addCircle(left, top, radius) {
+  const id = generateId()
+  const o = new fabric.Circle({
+    radius: radius,
+    fill: tableFill,
+    stroke: tableStroke,
+    strokeWidth: 2,
+    shadow: tableShadow,
+    originX: 'center',
+    originY: 'center',
+    centeredRotation: true
+  })
+  const t = new fabric.IText(number.toString(), {
+    fontFamily: 'Calibri',
+    fontSize: 14,
+    fill: '#fff',
+    textAlign: 'center',
+    originX: 'center',
+    originY: 'center'
+  })
+  const g = new fabric.Group([o, t], {
+    left: left,
+    top: top,
+    centeredRotation: true,
+    snapAngle: 45,
+    selectable: true,
+    type: 'table',
+    id: id,
+    number: number
+  })
+  canvas.add(g)
+  number++
+  return g
+}
+
+function addTriangle(left, top, radius) {
+  const id = generateId()
+  const o = new fabric.Triangle({
+    radius: radius,
+    fill: tableFill,
+    stroke: tableStroke,
+    strokeWidth: 2,
+    shadow: tableShadow,
+    originX: 'center',
+    originY: 'center',
+    centeredRotation: true
+  })
+  const t = new fabric.IText(number.toString(), {
+    fontFamily: 'Calibri',
+    fontSize: 14,
+    fill: '#fff',
+    textAlign: 'center',
+    originX: 'center',
+    originY: 'center'
+  })
+  const g = new fabric.Group([o, t], {
+    left: left,
+    top: top,
+    centeredRotation: true,
+    snapAngle: 45,
+    selectable: true,
+    type: 'table',
+    id: id,
+    number: number
+  })
+  canvas.add(g)
+  number++
+  return g
+}
+
+function addChair(left, top, width, height) {
+ const o = new fabric.Rect({
+   left: left,
+    top: top,
+     width: 30,
+     height: 30,
+    fill: chairFill,
+    stroke: chairStroke,
+   strokeWidth: 2,
+    shadow: chairShadow,
+    originX: 'left',
+   originY: 'top',
+    centeredRotation: true,
+    snapAngle: 45,
+    selectable: true,
+    type: 'chair',
+     id: generateId()
+   })
+  canvas.add(o)
+  return o
+}
+
+ function addBar(left, top, width, height) {
+ const o = new fabric.Rect({
+     width: width,
+   height: height,
+   fill: barFill,
+    stroke: barStroke,
+    strokeWidth: 2,
+     shadow: barShadow,
+     originX: 'center',
+    originY: 'center',
+     type: 'bar',
+     id: generateId()
+   })
+   const t = new fabric.IText(barText, {
+     fontFamily: 'Calibri',
+    fontSize: 14,
+    fill: '#fff',
+    textAlign: 'center',
+    originX: 'center',
+    originY: 'center'
+  })
+   const g = new fabric.Group([o, t], {
+     left: left,
+     top: top,
+     centeredRotation: true,
+     snapAngle: 45,
+     selectable: true,
+     type: 'bar'
+   })
+  canvas.add(g)
+   return g
+ }
+ function snapToGrid(target) {
+  target.set({
+    left: Math.round(target.left / (grid / 2)) * grid / 2,
+    top: Math.round(target.top / (grid / 2)) * grid / 2
+  })
+}
+
+function checkBoudningBox(e) {
+  const obj = e.target
+
+  if (!obj) {
+    return
+  }
+  obj.setCoords()
+
+  const objBoundingBox = obj.getBoundingRect()
+  if (objBoundingBox.top < 0) {
+    obj.set('top', 0)
+    obj.setCoords()
+  }
+  if (objBoundingBox.left > canvas.width - objBoundingBox.width) {
+    obj.set('left', canvas.width - objBoundingBox.width)
+    obj.setCoords()
+  }
+  if (objBoundingBox.top > canvas.height - objBoundingBox.height) {
+    obj.set('top', canvas.height - objBoundingBox.height)
+    obj.setCoords()
+  }
+  if (objBoundingBox.left < 0) {
+    obj.set('left', 0)
+    obj.setCoords()
+  }
+}
+
+function sendLinesToBack() {
+  canvas.getObjects().map(o => {
+    if (o.type === 'line') {
+      canvas.sendToBack(o)
+    }
+  })
+}
+
+document.querySelectorAll('.rectangle')[0].addEventListener('click', function() {
+  const o = addRect(0, 0, 60, 60)
+  canvas.setActiveObject(o)
+})
+
+document.querySelectorAll('.circle')[0].addEventListener('click', function() {
+  const o = addCircle(0, 0, 30)
+  canvas.setActiveObject(o)
+})
+
+document.querySelectorAll('.triangle')[0].addEventListener('click', function() {
+  const o = addTriangle(0, 0, 30)
+  canvas.setActiveObject(o)
+})
+
+document.querySelectorAll('.chair')[0].addEventListener('click', function() {
+  const o = addChair(0, 0)
+  canvas.setActiveObject(o)
+})
+
+document.querySelectorAll('.bar')[0].addEventListener('click', function() {
+  const o = addBar(0, 0, 180, 60)
+  canvas.setActiveObject(o)
+})
+
+// document.querySelectorAll('.wall')[0].addEventListener('click', function() {
+//   const o = addWall(0, 0, 60, 180)
+//   canvas.setActiveObject(o)
+// })
+
+document.querySelectorAll('.remove')[0].addEventListener('click', function() {
+  const o = canvas.getActiveObject()
+  if (o) {
+    o.remove()
+    canvas.remove(o)
+    canvas.discardActiveObject()
+    canvas.renderAll()
+  }
+})
+
+document.querySelectorAll('.customer-mode')[0].addEventListener('click', function() {
+  canvas.getObjects().map(o => {
+    o.hasControls = false
+    o.lockMovementX = true
+    o.lockMovementY = true
+    if (o.type === 'chair' || o.type === 'bar' || o.type === 'wall') {
+      o.selectable = false
+    }
+    //#38A62E
+    o.borderColor = '#000000'
+    o.borderScaleFactor = 2.5
+  })
+  canvas.selection = false
+  canvas.hoverCursor = 'pointer'
+  canvas.discardActiveObject()
+  canvas.renderAll()
+  // document.querySelectorAll('.admin-menu')[0].style.display = 'none'
+  document.querySelectorAll('.customer-menu')[0].style.display = 'block'
+})
+
+ document.querySelectorAll('.admin-mode')[0].addEventListener('click', function() {
+    canvas.getObjects().map(o => {
+    o.hasControls = true//     o.lockMovementX = false
+      o.lockMovementY = false
+    if (o.type === 'chair' || o.type === 'bar' || o.type === 'wall') {
+       o.selectable = true
+     }
+     o.borderColor = 'rgba(102, 153, 255, 0.75)'
+     o.borderScaleFactor = 1
+   })
+   canvas.selection = true
+  canvas.hoverCursor = 'move'
+  canvas.discardActiveObject()
+  canvas.renderAll()
+  // document.querySelectorAll('.admin-menu')[0].style.display = 'block'
+  document.querySelectorAll('.customer-menu')[0].style.display = 'none'
+})
+
+function formatTime(val) {
+  const hours =  Math.floor(val / 60)
+  const minutes = val % 60
+  const englishHours = hours > 12 ? hours - 12 : hours
+
+  const normal = hours + ':' + minutes + (minutes === 0 ? '0' : '')
+  const english = englishHours + ':' + minutes + (minutes === 0 ? '0' : '') + ' ' + (hours > 12 ? 'PM' : 'AM')
+
+  return normal + ' (' + english + ')'
+}
+
+var tableId
+var time1
+document.querySelectorAll('.submit')[0].addEventListener('click', function() {
+  const obj = canvas.getActiveObject()
+  $('#modal').modal('show')
+  let modalText = 'You have not selected anything'
+  if (obj) {
+    modalText = 'You have selected table ' + obj.number + ', time: ' + formatTime(slider.noUiSlider.get())
+  }
+  document.querySelectorAll('#modal-table-id')[0].innerHTML = modalText
+time1=formatTime(slider.noUiSlider.get())
+  tableId=obj.number
+console.log(tableId)
+console.log(time1)  
+})
+
+const slider = document.getElementById('slider')
+noUiSlider.create(slider, {
+  start: 1200,
+  step: 15,
+  connect: 'lower',
+  range: {
+    min: 0,
+    max: 1425
+  }
+})
+
+const sliderValue = document.getElementById('slider-value')
+slider.noUiSlider.on('update', function(values, handle) {
+	sliderValue.innerHTML = formatTime(values[handle])
+})
+
+function addDefaultObjects() {
+  addChair(15, 105)
+  addChair(15, 135)
+  addChair(75, 105)
+  addChair(75, 135)
+  addChair(225, 75)
+  addChair(255, 75)
+  addChair(225, 135)
+  addChair(255, 135)
+  addChair(225, 195)
+  addChair(255, 195)
+  addChair(225, 255)
+  addChair(255, 255)
+  addChair(15, 195)
+  addChair(45, 195)
+  addChair(15, 255)
+  addChair(45, 255)
+  addChair(15, 315)
+  addChair(45, 315)
+  addChair(15, 375)
+  addChair(45, 375)
+  addChair(225, 315)
+  addChair(255, 315)
+  addChair(225, 375)
+  addChair(255, 375)
+  addChair(15, 435)
+  addChair(15, 495)
+  addChair(15, 555)
+  addChair(15, 615)
+  addChair(225, 615)
+  addChair(255, 615)
+  addChair(195, 495)
+  addChair(195, 525)
+  addChair(255, 495)
+  addChair(255, 525)
+  addChair(225, 675)
+  addChair(255, 675)
+
+  addRect(30, 90, 60, 90)
+  addRect(210, 90, 90, 60)
+  addRect(210, 210, 90, 60)
+  addRect(0, 210, 90, 60)
+  addRect(0, 330, 90, 60)
+  addRect(210, 330, 90, 60)
+  addRect(0, 450, 60, 60)
+  addRect(0, 570, 60, 60)
+  addRect(210, 480, 60, 90)
+  addRect(210, 630, 90, 60)
+
+  addBar(120, 0, 180, 60)
+
+  addWall(120, 510, 60, 60)
+}
+addDefaultObjects()
+</script>
+</body>
+</html>
