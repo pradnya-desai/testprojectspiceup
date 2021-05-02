@@ -1,0 +1,415 @@
+<html>
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+	
+<style>
+#employee-info {
+	width: 700px;
+	height: 900px;
+}
+
+body [src$="3-ways-to-train-your-staff.jpg"] {
+	filter: blur(3px);
+	background-size: cover;
+	width: 1340px;
+	height: 900px;
+	opacity: 0.7;
+}
+
+form .inputs {
+	background-color: #000;
+	opacity: 0.8;
+	margin-top: -800px;
+	position: relative;
+	height: 700px;
+	margin-left: 400px;
+	width: 600px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: Black;
+}
+
+.input1 {
+    display: block; 
+	padding-bottom: 15px;
+}
+
+.input2 {
+	display: block;
+	padding-bottom: 15px;
+}
+
+.input3 {
+	display: block;
+	padding-bottom: 15px;
+}
+
+.input4 {
+	display: block;
+	padding-bottom: 15px;
+}
+
+.input5 {
+	display: block;
+	padding-bottom: 15px;
+}
+
+.input6 {
+	display: block;
+	padding-bottom: 15px;
+}
+
+.input7 {
+	display: block;
+	padding-bottom: 15px;
+}
+
+.input1 input {
+	height: 50px;
+	width: 100%;
+}
+
+.input2 input {
+	height: 50px;
+	width: 100%;
+}
+
+.input3 input {
+	height: 50px;
+	width: 100%;
+}
+
+.input4 input {
+	height: 50px;
+	width: 100%;
+}
+
+.input5 input {
+	height: 50px;
+	width: 100%;
+}
+
+.input6 input {
+	height: 50px;
+	width: 100%;
+}
+
+.input7 input {
+	height: 50px;
+	width: 100%;
+}
+
+select {
+	height: 50px;
+	width: 100%;
+}
+
+label {
+	font-size: 20px;
+	font-family: cursive;
+}
+
+#add-button-logo {
+	height: 35px;
+	width: 35px;
+}
+
+button {
+	display: block;
+	margin-top: 20px;
+	height: 60px;
+	width: 100%;
+	text-align: center;
+	margin-left: 1px;
+	font-size: 33px;
+	border: none;
+	padding: 12px 16px;
+	cursor: pointer;
+	padding-top: 6px;
+	border-radius: 4px;
+	font-family: Calibri;
+}
+
+button:hover {
+	background-color: RoyalBlue;
+}
+
+.container {
+	height: 50px;
+	width: 100%;
+	text-align: center;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	background-color: grey;
+}
+
+.container h3 {
+	font-size: 30px;
+	margin-top: 5px;
+	font-style: bold;
+	margin-right: -40px;
+	font-family: perpetua titling mt;
+}
+
+#output_image {
+	max-width: 200px;
+	max-height: 150px;
+	margin-right: -400px;
+	margin-top: -80px;
+}
+
+#records {
+	height: 600px;
+	width: 400px;
+}
+
+.show-records #recordbtn {
+	/* position:absolute; */
+	margin-right: -1000px;
+	margin-top: 30px;
+	background-color: gray;
+	height: 50px;
+	width: 100%;
+	text-align: center;
+	margin-left: 520px;
+	font-size: 35px;
+	border: none;
+	padding: 12px 16px;
+	cursor: pointer;
+	padding-top: 6px;
+	border-radius: 4px;
+	font-family: Calibri;
+}
+
+table,th,tr{
+boder:1px solid black;	
+border-collapse:collapse;
+font-size:19px; 
+text-align:center;
+}
+th,td{
+padding:20px;
+}
+</style>
+<script type='text/javascript'>
+  var choice=null;
+  
+    function preview_image(event) 
+    {
+     var reader = new FileReader();
+     reader.onload = function()
+     {
+      var output = document.getElementById('output_image');
+      output.src = reader.result;
+     }
+     reader.readAsDataURL(event.target.files[0]);
+    }
+    function saveEmployee()
+    {
+    	name=document.getElementById("name").value;
+    	address=document.getElementById("address").value;
+    	email=document.getElementById("email").value;
+    	phno=document.getElementById("phno").value;
+    	age=document.getElementById("age").value;
+    	aadhar_no=document.getElementById("aadhar_no").value;
+    	desg=document.getElementById("designation").value;
+    	/* alert(name+" "+address+" "+email+" "+address+" "+phno+" "+age+" "+aadhar_no+" "+desg); */
+    	if(name=="" && address==""&& email=="" && phno=="" && age=="" && aadhar_no==""&& desg=="Choose Your Designation" )
+		{
+		  	alert("Plzzz Enter All Details");  
+		}
+    	else
+      	{
+    		
+    	
+          ob=new XMLHttpRequest();
+    	  if(window.XMLHttpRequest)
+    	  {  
+    			ob=new XMLHttpRequest();  
+    	  }  
+    	  else if(window.ActiveXObject)
+    	  {  
+    		  ob=new ActiveXObject("Microsoft.XMLHTTP");   
+    	  } 
+    	  ob.onreadystatechange=function()
+    	  {
+    		     if(ob.readyState==4 && ob.status==200)
+    		     {
+    		           alert(ob.responseText);
+    		     }
+    	  }
+      	
+		  ob.open("POST","Staff.jsp?name="+name+"&address="+address+"&email="+email+"&phno="+phno+"&age="+age+"&aadhar_no="+aadhar_no+"&desg="+desg);
+		  ob.send();
+		  }
+   	 }
+	    	
+    	
+    
+    
+    function showTables()
+    {
+    	
+    	  ob=new XMLHttpRequest();
+
+		  if(window.XMLHttpRequest)
+		  {  
+			  ob=new XMLHttpRequest();  
+		  }  
+		  else if(window.ActiveXObject)
+		  {  
+			  ob=new ActiveXObject("Microsoft.XMLHTTP");   
+		  } 
+		  ob.onreadystatechange=function()
+		  {
+		              if(ob.readyState==4 && ob.status==200)
+		              {
+		                         document.getElementById('output').innerHTML=ob.responseText;
+		                         
+
+		              }
+		  }
+		  ob.open("POST","employeeTable.jsp");
+		  ob.send(); 
+    }
+    
+    
+    function Delete(btnDelete)
+    {	
+    	choice=1;
+    	if (confirm("Are you sure you want to delete the record?")) 
+    	{
+    	  ob=new XMLHttpRequest();
+  		  if(window.XMLHttpRequest)
+  		  {  
+  			  ob=new XMLHttpRequest();  
+  		  }  
+  		  else if(window.ActiveXObject)
+  		  {  
+  			  ob=new ActiveXObject("Microsoft.XMLHTTP");   
+  		  } 
+  		  ob.onreadystatechange=function()
+  		  {
+  		              if(ob.readyState==4 && ob.status==200)
+  		              {
+  		                          alert(ob.responseText);
+  		              }
+  		  }
+  		  ob.open("GET","deleteEmp.jsp?id="+btnDelete+"&ch="+choice);
+  		  ob.send();
+  		 }
+         else 
+    	 {
+    		  console.log("You pressed Cancel!");
+    	 }
+
+    	
+	  }
+
+    
+    
+    </script>
+</head>
+<body>
+    <div class="container">
+      <h3>EMPLOYEE INFORMATION</h3>
+   
+      <img 
+      src="https://www.hiupgroup.com/wp-content/uploads/2019/07/3-ways-to-train-your-staff.jpg"/>
+       <section id="employee-info">
+      
+      <form id="employee-form">
+        
+   
+        <div class="inputs">
+          <div class="input1">
+            <label for="name" style="color:white;">Name</label>
+            <input type="text" id="name" maxlength="30" />
+          </div>
+          <div class="input2">
+            <label for="Address" style="color:white;">Address</label>
+            <input type="text" id="address" maxlength="100" />
+          </div>
+          <div class="input3">
+            <label for="email" style="color:white;">Email-Id</label>
+            <input type="email" id="email"  />
+          </div>
+          <div class="input4" >
+            <label for="Phone No" style="color:white;">Phone No</label>
+            <input type="text" id="phno"  />
+          </div>
+          <div class="input5" >
+            <label for="name" style="color:white;">Age</label>
+            <input type="text" id="age"/>
+          </div>
+          <div class="input6" >
+            <label for="aadhar no" style="color:white;">Aadhar Card Number</label>
+            <input type="text" id="aadhar_no"/>
+          </div>
+          <!-- <div class="input7" id="wrapper">
+            <label for="photo">Upload Your Photo</label>
+            <input type="file" accept="image/*" onchange="preview_image(event)" id="photo">
+            <img id="output_image">
+          </div> -->
+          
+          <div class="input8" >
+          <label for="Designation" style="color:white;">Designation</label>
+            <select title="Designation" id="designation" >
+              <option selected hidden>Choose Your Designation</option>
+              <option value="Manager">Manager</option>
+              <option value="Waiter">Waiter</option>
+              <option value="Cleaning">Cleaning Staff</option>
+              <option value="Security">Security</option>
+              <option value="Head Chef">Head Chef</option>
+              <option value="Junior Chef">Junior Chef</option>
+            </select>
+          </div>
+          <!-- <div class="add-employee-btn">
+              <button onclick="saveEmployee()"><img id="add-button-logo" 
+src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5werw6_IK2V5Z-3M0HvY2d0cB68WJfxfeyg&usqp=CAU" >
+                SAVE EMPLOYEE</button>
+                <a href="Dashboard.html"><button>Back</button></a>
+              </div> -->
+           
+        </div>
+        
+        <!-- <div id="wrapper">
+          <input type="file" accept="image/*" onchange="preview_image(event)">
+          <img id="output_image"/>
+        </div> -->
+   
+      </form>
+    </section>
+    <section id="records">
+   	<button class="btn btn-success" onclick="saveEmployee();" style="margin-left:520px; margin-top:-80px; font-size:25px;">Save Employee</button>
+    <a href="Dashboard.html"><button class="btn btn-primary" style="margin-left:520px; font-size:25px;">Back</button> </a>      		
+           
+    <button type="button" id="recordbtn" style="margin-left: 520px;"; onclick="showTables()">SHOW RECORDS</button>
+      <div class="show-records" style="margin-left:100px; margin-top: 50px;" id="output">
+      
+      </div>
+    </section>
+    
+ 
+  </div> 
+
+  
+  </body>
+</html>
